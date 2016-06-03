@@ -110,7 +110,7 @@ get(peer, {?MODULE, [Conn, _Method, _RawPath, _Version, _Headers]}=THIS) ->
             end;
         {ok, {Addr, _Port}} ->
             inet_parse:ntoa(Addr);
-        {error, enotconn} ->
+        {error, _} ->
             exit(normal)
     end;
 get(path, {?MODULE, [_Conn, _Method, RawPath, _Version, _Headers]}) ->
